@@ -1,14 +1,29 @@
 <template>
-    <div>
-        <h1>Elmo es pro</h1> <!--aqui van los estilos cuadros -->  
-    </div>
+   <div >
+    <Item />
+    <Item />
+    <Item />
+    <Item />
+    <Item />
+    <Item />
+    <Item />
+    <Item />
+    <Item />
+    <Item />
+   </div>
+
 </template>
 
 <script >
- export default {
+import Item from '../components/Item.vue';
+
+export default {
     name: 'ShoppingCart',
-  }
-</script>
+    components: {
+        Item
+    }
+};
+</script >
 
 <style lang="scss" scoped>
 

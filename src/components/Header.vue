@@ -4,7 +4,8 @@
           <h1 >Afternova Shop</h1>
       </nav>
     </header>
-  </template>
+        <br>
+</template>
   
   <script>
   export default {
