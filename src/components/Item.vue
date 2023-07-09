@@ -29,8 +29,8 @@
                     <td colspan="2">{{ precio }}</td>
                 </tr>
                 <tr>
-                    <td><input type="number" id="tentacles" name="tentacles"
-       min="1" max="100"></td>
+                   <td><input type="number" id="tentacles" name="tentacles"
+       min="1" max="100"></td> 
                     <td>
                     <div class="input-group">
                         <button class="btn btn-primary" type="on-submit" @click="handleClick" >
