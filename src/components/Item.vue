@@ -23,13 +23,14 @@
                     
                 </tr>
                 <tr>
-                    <td colspan="2">Iphone 14 pro ma</td>
+                    <td colspan="2">{{ name }}</td>
                 </tr>
                 <tr>
-                    <td colspan="2">5000</td>
+                    <td colspan="2">{{ precio }}</td>
                 </tr>
                 <tr>
-                    <td>15</td>
+                    <td><input type="number" id="tentacles" name="tentacles"
+       min="1" max="100"></td>
                     <td>
                     <div class="input-group">
                         <button class="btn btn-primary" type="on-submit" @click="handleClick" >
@@ -46,7 +47,12 @@
 
 <script >
  export default {
-    name: 'Item', // NO BORRAR!!!!
+    props: {
+        name: String,
+        precio: Number,
+        stock: Number
+    }
+    // NO BORRAR!!!! variables que se quieran leeer nombre precio stock 
   }
 </script>
 
