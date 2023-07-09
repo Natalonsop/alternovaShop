@@ -1,57 +1,78 @@
 
 <template>
-    
-    <div>
-        
-        <table>
-            <tbody>  
-                <tr>
-                    <td class = "s-img" colspan="2"><img src="../assets/Images/doggo.gif">
-                        <a class="btncontacto" href="Contacto.html" 
-                            style="position:relative ; left: 205px ; bottom: 86% ;">
-                        <button class="btn btn-primary" type="on-submit" @click="handleClick" >
-                            <i class="bi bi-trash-fill"></i>
-                        </button>
-                        </a>
-                        <a class="btncontacto" href="Contacto.html" 
-                            style="position:relative ; right: 40px ; bottom: 86% ;">
-                        <button class="btn btn-primary" type="on-submit" @click="handleClick" >
-                            <i class="bi bi-pencil-fill"></i>
-                        </button>
-                        </a>
-                    </td>
-                    
-                </tr>
-                <tr>
-                    <td colspan="2">{{ name }}</td>
-                </tr>
-                <tr>
-                    <td colspan="2">{{ precio }}</td>
-                </tr>
-                <tr>
-                   <td><input type="number" id="tentacles" name="tentacles"
-       min="1" max="100"></td> 
-                    <td>
-                    <div class="input-group">
-                        <button class="btn btn-primary" type="on-submit" @click="handleClick" >
-                            <i class="bi bi-cart-plus-fill"></i>
-                        </button>
-                    </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <br>
-    </div>
+        <div class="card mx-1 mb-1" style="width: 10rem;">
+            <img src="../assets/Images/doggo.gif" class="card-img-top" alt="...">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item text-truncate" alt="item.name">{{ item.name }}</li>
+                <li class="list-group-item">{{ item.unit_price }}</li>
+                <li class="list-group-item">
+                    <button class="btn btn-primary" @click="decreaseQuantity" :disabled="quantity === 0" >
+                        <i class="bi bi-bag-dash-fill" ></i>
+                    </button>
+                    {{ quantity }}
+                    <button class="btn btn-primary" @click="increaseQuantity" :disabled="quantity === item.stock" >
+                        <i class="bi bi-bag-plus-fill"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="card-body">
+                <button class="btn btn-primary" @click="editItem"  >
+                    <i class="bi bi-pencil-fill"></i>
+                </button>
+                <button class="btn btn-danger" @click="deleteItem" >
+                    <i class="bi bi-trash-fill"></i>
+                </button>
+                <button class="btn btn-primary" >
+                    <i class="bi bi-cart-plus-fill"></i>
+                </button>
+            </div>
+        </div>
 </template>
 
 <script >
+import { del } from '../httpHelper.js';
  export default {
+    name:'Item',  
     props: {
-        name: String,
-        precio: Number,
-        stock: Number
+        item: {
+            id: String,
+            name: String,
+            unit_price: Number,
+            stock: Number
+        }
+    },
+    data(){
+        return{
+            quantity:0
+        }
+    },
+    methods:{
+        increaseQuantity(){
+            this.quantity++ 
+        },
+        decreaseQuantity(){
+            if (this.quantity <= 0) {
+                this.quantity=0
+            }
+            else {
+                this.quantity--;
+            }
+        },
+        deleteItem(){
+            del(`http://localhost:3000/items/${this.item.id}`, { })
+            .then(response => {
+               // this.$forceUpdate();
+               console.log(response)
+            }) 
+        },
+        editItem(){
+            this.$router.push({ path: '/edit', query: this.item })
+        }
     }
+   
+
+
+
     // NO BORRAR!!!! variables que se quieran leeer nombre precio stock 
   }
 </script>

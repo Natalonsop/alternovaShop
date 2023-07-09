@@ -1,65 +1,68 @@
 <template>
     <div>
-        <form @submit.prevent="submitForm" v-if="!formSubmitted">
-        <span>Nombre</span><br>
-        <input 
-            v-model="nombre"
-            type="text"
-            placeholder="Nombre producto" 
-        /><br>
-        <span>Precio</span><br>
-        <input 
-            v-model="precio"
-            type="text"
-            placeholder="Precio por unidad" 
-        /><br>
-        <span>Stock</span><br> <input 
-            v-model="stock"
-            type="number"
-            placeholder="Nombre producto" 
-        /><br>
-        <span>Tipo: </span>
-        <select v-model="tipo">
-            <option disabled value="">Seleccione un elemento</option>
-            <option>Tecnologia</option>
-            <option>Deportes</option>
-            <option>Construccion</option>
-        </select>
-        
-        <br>
-        <input 
-            class="submit" 
-            type="submit" 
-            value="Editar"
-        >
+        <form @submit.prevent="submitForm" >
+            <div class="form-group">
+                <label>Nombre</label>
+                <input class="form-control"
+                v-model="item.name"
+                type="text"
+                placeholder="Nombre producto"/>
+            </div>
+            <div class="form-group">
+                <label>Precio</label>
+                <input class="form-control"
+                v-model="item.unit_price"
+                type="text"
+                placeholder="Precio por unidad"/>
+            </div>
+            <div class="form-group">
+                <label>Stock</label>
+                <input class="form-control"
+                v-model="item.stock"
+                type="text"
+                placeholder="Stock"/>
+            </div>
+            <div class="form-group">
+                <label>Tipo de producto</label>
+                <select class="form-control" v-model="item.type">
+                    <option disabled value="">Seleccione un elemento</option>
+                    <option value="technology">Tecnologia</option>
+                    <option value="sport">Deportes</option>
+                    <option value="building">Construccion</option>
+                </select>
+            </div>
+            <button class="btn btn-success mt-2" type="submit">
+               Editar
+            </button>       
         </form>
-        <div v-if="formSubmitted">
-            <h3>Item editado </h3>
-            <p>Nombre Producto: {{ nombre }}</p>
-            <p>Precio: {{ precio }}</p>
-            <p>Stock: {{ stock }}</p>
-            <p>Tipo: {{ tipo }}</p>
-            <small>Click on run to launch the app again.</small>
-        </div>
     </div>   
 </template>
 
 <script >
+import { put } from '../httpHelper.js';
 export default {
     name: 'EditItem' ,
+    
     data() {
       return {
-        nombre: "",
-        precio: "",
-        stock: "",
-        tipo: "",
-        formSubmitted: false
+        item: {
+            name: "",
+            unit_price: "",
+            stock: "",
+            type: "",
+        }
       };
     },
+    mounted(){
+        this.item = this.$route.query;
+    },
     methods: {
-      submitForm: function () {
-        this.formSubmitted = true
-      }
+        submitForm: function () {
+            put(`http://localhost:3000/items/${this.item.id}`, { body: this.item })
+            .then(response => {
+                this.$router.push('/')
+            }) 
+        }
     },
   };
 </script>

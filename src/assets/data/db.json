@@ -1,0 +1,26 @@
+{
+  "items": [
+    {
+      "id": "fbf0ecb0-1ead-11ee-b1c1-817f446ef7ea",
+      "name": "Iphone 14 pro max",
+      "unit_price": "5000",
+      "stock": "12",
+      "type": "technology"
+    },
+    {
+      "id": "0f8c7f40-1eaf-11ee-a6d4-a169a58e4fb1",
+      "name": "Control joystick inalámbrico",
+      "unit_price": "1000",
+      "stock": "1",
+      "type": "technology"
+    },
+    {
+      "id": "74060e70-1eb2-11ee-9f36-43c0ac2586f5",
+      "name": "Bicicleta Todo Terreno",
+      "unit_price": "200",
+      "stock": "0",
+      "type": "sport"
+    }
+  ],
+  "cart": []
+}
