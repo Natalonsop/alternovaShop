@@ -4,10 +4,23 @@
     <div>
         
         <table>
-            <tbody>
+            <tbody>  
                 <tr>
+                    <td class = "s-img" colspan="2"><img src="../assets/Images/doggo.gif">
+                        <a class="btncontacto" href="Contacto.html" 
+                            style="position:relative ; left: 205px ; bottom: 86% ;">
+                        <button class="btn btn-primary" type="on-submit" @click="handleClick" >
+                            <i class="bi bi-trash-fill"></i>
+                        </button>
+                        </a>
+                        <a class="btncontacto" href="Contacto.html" 
+                            style="position:relative ; right: 40px ; bottom: 86% ;">
+                        <button class="btn btn-primary" type="on-submit" @click="handleClick" >
+                            <i class="bi bi-pencil-fill"></i>
+                        </button>
+                        </a>
+                    </td>
                     
-                    <td class = "s-img" colspan="2"><img src="../assets/Images/doggo.gif"></td>
                 </tr>
                 <tr>
                     <td colspan="2">Iphone 14 pro ma</td>
@@ -27,6 +40,7 @@
                 </tr>
             </tbody>
         </table>
+        <br>
     </div>
 </template>
 
