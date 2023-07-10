@@ -1,26 +1,70 @@
 {
   "items": [
     {
-      "id": "fbf0ecb0-1ead-11ee-b1c1-817f446ef7ea",
-      "name": "Iphone 14 pro max",
-      "unit_price": "5000",
-      "stock": "12",
-      "type": "technology"
+      "id": "0f8c7f40-1eaf-11ee-a6d4-a169a58e4fb1",
+      "name": "Control joystick inalámbrico",
+      "unit_price": 1000,
+      "stock": 0,
+      "type": "technology",
+      "inCart": false
+    },
+    {
+      "id": "74060e70-1eb2-11ee-9f36-43c0ac2586f5",
+      "name": "Bicicicleta Roadmaster",
+      "unit_price": 1800,
+      "stock": 0,
+      "type": "sport",
+      "inCart": false
+    },
+    {
+      "id": "9e6224d0-1eb5-11ee-99b6-eb60768e22f2",
+      "name": "iPhone 14 Pro Ma",
+      "unit_price": 5000,
+      "stock": 2,
+      "type": "sport",
+      "inCart": false
+    },
+    {
+      "id": "356385e0-1eb6-11ee-b6ed-d328b565c5ac",
+      "name": "Timon Racing Carrera",
+      "unit_price": 8000,
+      "stock": 0,
+      "type": "technology",
+      "inCart": false
+    }
+  ],
+  "cart": [
+    {
+      "id": "9e6224d0-1eb5-11ee-99b6-eb60768e22f2",
+      "name": "iPhone 14 Pro Ma",
+      "unit_price": 5000,
+      "stock": 3,
+      "type": "sport",
+      "inCart": true
+    },
+    {
+      "id": "74060e70-1eb2-11ee-9f36-43c0ac2586f5",
+      "name": "Bicicicleta Roadmaster",
+      "unit_price": 1800,
+      "stock": 1,
+      "type": "sport",
+      "inCart": true
     },
     {
       "id": "0f8c7f40-1eaf-11ee-a6d4-a169a58e4fb1",
       "name": "Control joystick inalámbrico",
-      "unit_price": "1000",
-      "stock": "1",
-      "type": "technology"
+      "unit_price": 1000,
+      "stock": 1,
+      "type": "technology",
+      "inCart": true
     },
     {
-      "id": "74060e70-1eb2-11ee-9f36-43c0ac2586f5",
-      "name": "Bicicleta Todo Terreno",
-      "unit_price": "200",
-      "stock": "0",
-      "type": "sport"
+      "id": "356385e0-1eb6-11ee-b6ed-d328b565c5ac",
+      "name": "Timon Racing Carrera",
+      "unit_price": 8000,
+      "stock": 2,
+      "type": "technology",
+      "inCart": true
     }
-  ],
-  "cart": []
+  ]
 }

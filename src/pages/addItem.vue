@@ -45,7 +45,6 @@ import { post } from '../httpHelper.js';
 import { uuid } from 'vue-uuid';
 export default {
     name: 'AddItem' ,
-    
     data() {
       return {
         item: {
@@ -54,6 +53,7 @@ export default {
             unit_price: "",
             stock: "",
             type: "",
+            inCart: false
         }
       };
     },

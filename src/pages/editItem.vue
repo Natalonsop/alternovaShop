@@ -50,6 +50,7 @@ export default {
             unit_price: "",
             stock: "",
             type: "",
+            inCart: false
         }
       };
     },
