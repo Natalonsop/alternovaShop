@@ -1,6 +1,5 @@
 # RETO FRONT-END
 
-Prueba técnica desarrollada con vue.js , javascript, json server.
 Este proyecto está desarrollado en vue.js con javascript y contiene una estructura sencilla , antes de desplegar el proyecto debe desplegar primero el servidor local .
 
 ### Despliegue local
