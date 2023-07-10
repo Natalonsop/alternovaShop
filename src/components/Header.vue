@@ -1,7 +1,7 @@
 <template>
     <header class ="header">
       <nav>
-          <h1 >Afternova Shop</h1>
+          <h1 >Alternova Shop</h1>
       </nav>
     </header>
         <br>
