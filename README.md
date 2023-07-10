@@ -1,7 +1,35 @@
-# Vue 3 + Vite
+# RETO FRONT-END
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Prueba técnica desarrollada con vue.js , javascript, json server.
+Este proyecto está desarrollado en vue.js con javascript y contiene una estructura sencilla , antes de desplegar el proyecto debe desplegar primero el servidor local .
 
-## Recommended IDE Setup
+### Despliegue local
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Clonar el proyecto
+
+```bash
+  git clone https://github.com/Natalonsop/alternovaShop.git
+```
+
+Instalar Json server
+
+```bash
+  npm instal -g json-server
+```
+
+Instalar dependencias
+
+```bash
+  npm install
+```
+Iniciar servidor local 
+
+```bash
+  json-server --watch src/assets/data/db.json
+```
+
+Iniciar proyecto
+
+```bash
+  npm run dev
+```
